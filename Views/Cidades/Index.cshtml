@@ -1,9 +1,42 @@
-@model IEnumerable<ProjetoCidades.Models.Cidade>
 <div>
     <h2>Minhas Cidades</h2>
-    @{
-        foreach(var item in Model){
-            <li>@item.Nome</li>
-        }
-    }
+
+    <p><a asp-action="Cadastrar">Cadastrar Nova Cidade</a></p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Estado</th>
+                <th>Habitantes</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach(var item in Model){
+                    <tr>
+                        <td>
+                            @item.Id
+                        </td>
+                        <td>
+                            @item.Nome
+                        </td>
+                        <td>
+                            @item.Estado
+                        </td>
+                        <td>
+                            @item.Habitantes
+                        </td>
+                        <td>
+                            <a asp-action="Editar" asp-route-id="@item.Id">Editar</a>
+                            <a asp-action="Detalhes" asp-route-id="@item.Id">Detalhes</a>
+                            <a asp-action="Excluir" asp-route-id="@item.Id">Excluir</a>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
 </div>
