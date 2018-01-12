@@ -1,0 +1,30 @@
+@model ProjetoCidades.Models.Cidade
+<!--class bootstrap-->
+<div>
+    <h2>Detalhes</h2>
+    <h4>Cidade</h4>
+    <hr>
+    <div class="row">
+        <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="Id" class="control-label"></label>
+                    @Model.Id
+                </div>
+                <div class="form-group">
+                    <label asp-for="Nome" class="control-label"></label>
+                    @Model.Nome
+                </div>
+                <div class="form-group">
+                    <label asp-for="Estado" class="control-label"></label>
+                    @Model.Estado
+                </div>
+                <div class="form-group">
+                    <label asp-for="Habitantes" class="control-label"></label>
+                    @Model.Habitantes
+                </div>
+                <div class="form-group">
+                    <a asp-action="Index">Voltar</a>
+                </div>
+        </div>
+    </div>
+</div>
